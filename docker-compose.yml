@@ -1,0 +1,89 @@
+services:
+# ================ SERVICE POUR GESTION DES PAGES =====================
+  front_end:
+    build: ./frontend
+
+    container_name: frontend
+    # ports:
+    # # DEV
+    #   - "8003:8003"
+# PRODUCTION
+# - "8003"
+    networks:
+      - transcendence-rebirth
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public  # Added: live update for HTML/CSS/JS
+
+# ================ SERVICE POUR GESTION DES COMPTES =====================
+  service-account:
+    build: ./backend/service_account
+    container_name: service_account
+    ports:
+    # DEV
+      - "8004:8004"
+    # production
+    # - "8000"
+    env_file: .env
+    networks:
+      - transcendence-rebirth
+    depends_on:
+      - front_end
+    volumes:
+      - ./backend/service_account/data:/app/data
+      - ./backend/service_account/uploads/avatars:/app/uploads/avatars
+
+# ================ SERVICE POUR L'AUTHENTIFICATION =====================
+  service-authentification:
+    build: ./backend/service_auth
+
+    container_name: service_auth
+    ports:
+      - "8001:8001"
+    depends_on:
+      - front_end
+    networks:
+      - transcendence-rebirth
+    env_file: .env
+    volumes:
+      - ./backend/service_auth/data:/app/data
+
+
+
+# VERSION PRODUCTION AVEC NGINX ET LE CERTIFICAT + REDIS
+
+  nginx:
+    build: ./nginx
+    container_name: nginx_container
+    ports:
+      # - "8080:80"
+      - "8443:443"  
+    volumes:
+      - ./data/letsencrypt:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+      - ./frontend/public:/usr/share/nginx/html
+    networks:
+      - transcendence-rebirth
+    depends_on:
+      - service-authentification
+
+  # certbot:
+  # # Cerbot service de certification automatique
+  #   build: ./certbot
+  #   container_name: cert_container
+  #   volumes:
+  #   - ./data/letsencrypt:/etc/letsencrypt
+  #   - ./data/certbot/www:/var/www/certbot
+
+  #   depends_on:
+  #     - nginx
+
+  # redis:
+  #   build: ./redis
+  #   ports:
+  #     - "6379:6379"
+  
+networks:
+  transcendence-rebirth:
+    driver: bridge
+

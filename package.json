@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "form-data": "^4.0.3",
+    "typescript": "^5.8.3",
+    "undici-types": "^7.11.0"
+  }
+}
