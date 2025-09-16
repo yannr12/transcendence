@@ -81,5 +81,8 @@ Ce projet a été conçu avec une architecture en **microservices**, ce qui perm
   * **Tableau de bord (Module Mineur)** 📈 : Un tableau de bord affiche les statistiques de l'utilisateur, comme le nombre de victoires et de défaites, ainsi qu'un historique détaillé des matchs.
   * **Sécurité (Module Majeur)** 🔐 : L'authentification a été renforcée avec l'ajout de la **double authentification (2FA)** et des **JSON Web Tokens (JWT)** pour sécuriser les sessions et l'accès aux ressources. Les informations sensibles sont gérées dans un fichier `.env`, qui n'est pas versionné pour des raisons de sécurité.
 
+<img width="1536" height="1024" alt="fond_transcendence" src="https://github.com/user-attachments/assets/37e4441b-a0f9-4259-b012-cbe84e36cbac" />
+
+<img width="1024" height="1024" alt="pers0_transcendence" src="https://github.com/user-attachments/assets/42a96e6f-67b2-49c1-ac58-52cf5b75593e" />
 
 N'hésitez pas à explorer le code et à nous contacter si vous avez des questions \! 😉
