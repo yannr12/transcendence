@@ -1,0 +1,60 @@
+function pong_1vbotPageHTML() {
+	return `<div class="flex flex-col justify-evenly items-center h-screen w-screen bg-green-50">
+			<div id="board" class="w-3/5 h-2/3 border-b-2 border-pink-200 flex justify-between items-center relative bg-pink-200">
+				<div id="countdown" class="left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-[150px] text-green-600 z-30 absolute"></div>
+				<div id="paddle1" class="w-[15px] h-[100px] bg-pink-800 rounded-xl absolute left-0"></div>
+				<div id="paddle2" class="w-[15px] h-[100px] bg-pink-800 rounded-xl absolute right-0"></div>
+				<div id="ball" class="w-[30px] h-[30px] bg-red-600 rounded-full absolute left-0 top-0 z-1"></div>
+				<div id="bonus" class="w-[60px] h-[60px] rounded-md absolute z-1"></div>
+				<div id="separator" class="absolute w-[10px] h-[90%] bg-[#ffbde6] left-1/2 -translate-x-1/2 rounded-lg"></div>
+				<div id="left-score" class="absolute text-[#ffbde6] left-[25%] text-8xl -translate-x-1/2"></div>
+				<div id="right-score" class="absolute text-[#ffbde6] right-[25%] text-8xl translate-x-1/2"></div>
+			</div>
+			<div id="winlose" class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-lg bg-green-50 z-5 hidden">
+				<div class="absolute font-semibold w-[600px] h-[160px] left-1/2 -translate-x-1/2 top-1/6 flex flex-col gap-10 justify-center items-center text-7xl">
+					<span>Game Over</span>
+					<span id="finalScore" class="text-5xl"></span>
+				</div> 
+				<button onclick="goHome()" id="home" class="w-[300px] h-[80px] rounded-lg bg-red-500 hover:bg-red-600 hover:text-slate-300 flex justify-center items-center text-slate-50 font-semibold left-[50px] top-[70%] absolute">Go Home</button>
+				<button onclick="retry()" id="retry" class="w-[300px] h-[80px] rounded-lg bg-blue-500 hover:bg-blue-600 hover:text-slate-300 flex justify-center items-center text-slate-50 font-semibold right-[50px] top-[70%] absolute">Retry</button>
+			</div>
+			<div class="text-center mt-2">
+				<a href="registered_user" class="text-[#264e77] hover:underline font-semibold">
+					Go Back
+				</a>
+			</div>
+		</div>`;
+}
+
+function pong_4PPageHTML() {
+	return `<div class="flex flex-col justify-evenly items-center h-screen w-screen bg-green-0">
+			<div id="board" class="w-250 h-250 border-b-2 border-r-2 border-pink-200 relative bg-pink-200">
+				<div id="countdown" class="left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-[150px] text-green-600 z-30 absolute"></div>
+				<div id="ball" class="w-[30px] h-[30px] bg-red-600 rounded-full absolute left-0 top-0 z-1"></div>
+				<div id="paddle1" class="w-[15px] h-[100px] bg-pink-800 rounded-xl absolute"></div>
+				<div id="paddle2" class="w-[15px] h-[100px] bg-pink-800 rounded-xl absolute"></div>
+				<div id="paddle3" class="w-[100px] h-[15px] bg-pink-800 rounded-xl absolute"></div>
+				<div id="paddle4" class="w-[100px] h-[15px] bg-pink-800 rounded-xl absolute"></div>
+				<div id="bonus" class="w-[60px] h-[60px] rounded-md absolute z-1"></div>
+				<div class="absolute left-1/2 -translate-x-1/2 w-[10px] h-[120%] rotate-45 bg-[#ffbde6] top-1/2 -translate-y-1/2"></div>
+				<div class="absolute left-1/2 -translate-x-1/2 w-[10px] h-[120%] -rotate-45 bg-[#ffbde6] top-1/2 -translate-y-1/2"></div>
+				<div id="left-score" class="left-1/4 top-1/2 -translate-y-1/2 -translate-x-1/2 text-[#ffbde6] absolute text-8xl"></div>
+				<div id="right-score" class="right-1/4 top-1/2 -translate-y-1/2 translate-x-1/2 text-[#ffbde6] absolute text-8xl"></div>
+				<div id="top-score" class="top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#ffbde6] absolute text-8xl"></div>
+				<div id="bottom-score" class="bottom-1/4 left-1/2 -translate-x-1/2 translate-y-1/2 text-[#ffbde6] absolute text-8xl"></div>
+			</div>
+			<div id="winlose" class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-lg bg-green-50 z-5 hidden">
+				<div class="absolute font-semibold w-[600px] h-[160px] left-1/2 -translate-x-1/2 top-1/6 flex flex-col gap-10 justify-center items-center text-7xl">
+					<span>Game Over</span>
+					<span id="finalScore" class="text-5xl"></span>
+				</div> 
+				<button onclick="goHome()" id="home" class="w-[300px] h-[80px] rounded-lg bg-red-500 hover:bg-red-600 hover:text-slate-300 flex justify-center items-center text-slate-50 font-semibold left-[50px] top-[70%] absolute">Go Home</button>
+				<button onclick="retry()" id="retry" class="w-[300px] h-[80px] rounded-lg bg-blue-500 hover:bg-blue-600 hover:text-slate-300 flex justify-center items-center text-slate-50 font-semibold right-[50px] top-[70%] absolute">Retry</button>
+			</div>
+			<div class="text-center mt-2">
+				<a href="modes" class="text-[#264e77] hover:underline font-semibold">
+				  Go Back
+				</a>
+			</div>
+		</div>`;
+}

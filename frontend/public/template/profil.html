@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen flex items-center justify-center bg-[#38424d] text-white">
+      <div class="h-screen w-screen flex bg-cover bg-center bg-no-repeat bg-fixed font-mono relative" style="background-image: url('/assets/background.png');">
+
+  <!-- Triangles décoratifs -->
+  <div class="absolute bottom-0 left-0 w-0 h-0 z-30 border-b-[200px] border-b-white border-r-[200px] border-r-transparent"></div>
+  <div class="absolute top-0 left-0 w-0 h-0 z-30 border-t-[200px] border-t-white border-r-[200px] border-r-transparent"></div>
+  <div class="absolute top-0 w-0 h-0 z-30 border-r-[200px] border-r-white border-b-[200px] border-b-transparent" style="left: calc(50% - 200px);"></div>
+  <div class="absolute bottom-0 w-0 h-0 z-30 border-r-[200px] border-r-white border-t-[200px] border-t-transparent" style="left: calc(50% - 200px);"></div>
+
+  <!-- Bande blanche gauche avec PROFIL -->
+  <div class="relative z-10 border-l-[50px] border-t-[50px] border-b-[50px] border-white h-screen w-[calc(50%-50px)] hidden md:flex items-start justify-start pl-2 pt-20">
+  </div>
+
+  <!-- Formulaire profil -->
+  <div class="bg-white relative z-10 h-screen overflow-y-auto w-full md:w-[calc(50%+50px)] flex justify-center items-center">
+    <div class="w-full max-w-md p-8 flex flex-col items-center">
+
+
+      <form class="w-full flex flex-col gap-4 font-mono">
+        <!-- Avatar Upload -->
+        <div class="flex flex-col items-center mb-4">
+          <img id="avatarPreview" src="https://via.placeholder.com/150" class="w-32 h-32 rounded-full object-cover mb-2 border-2 border-black">
+          <label for="avatarUpload" class="px-4 py-2 bg-gray-200 text-black rounded-lg cursor-pointer hover:bg-gray-300 transition">
+            Upload Avatar
+          </label>
+          <input type="file" id="avatarUpload" name="avatar" accept="image/*" class="hidden">
+        </div>
+
+        <!-- Username -->
+        <label class="flex flex-col text-black text-base">
+          Username
+          <input type="text" id="username" name="username" class="mt-1 p-3 border border-black text-black bg-white" placeholder="">
+        </label>
+
+        <!-- Age -->
+        <label class="flex flex-col text-black text-base">
+          Age
+          <input type="number" id="age" name="age" class="mt-1 p-3 border border-black text-black bg-white" placeholder="">
+        </label>
+
+        <!-- Email -->
+        <label class="flex flex-col text-black text-base">
+          Email
+          <input type="email" id="email" name="email" class="mt-1 p-3 border border-black text-black bg-white" placeholder="">
+        </label>
+
+        <!-- Change Password -->
+        <label class="flex flex-col text-black text-base">
+          Change Password
+          <input type="password" id="password" name="password" class="mt-1 p-3 border border-black text-black bg-white" placeholder="New password">
+        </label>
+
+        <!-- Repeat Password -->
+        <label class="flex flex-col text-black text-base">
+          Repeat Password
+          <input type="password" id="passwordRepeat" name="passwordRepeat" class="mt-1 p-3 border border-black text-black bg-white" placeholder="Repeat password">
+        </label>
+
+        <!-- Save Changes Button -->
+        <button type="submit" class="mt-4 w-full py-4 bg-[#30b6df] text-white font-bold hover:bg-[#3cc0e8] transition">
+          Save Changes
+        </button>
+      </form>
+
+      <!-- Separator -->
+      <div class="border-t-2 border-dashed border-black my-8 w-full"></div>
+
+      <!-- Two-Factor Authentication -->
+      <div class="text-center mb-4">
+        <a onclick="call_page('2fa')" class="inline-block bg-[#30b6df] text-white py-3 px-6 rounded-lg hover:bg-[#3cc0e8] transition font-semibold shadow hover:shadow-md">
+          Two-Factor Authentication
+        </a>
+      </div>
+
+      <!-- Retour Dashboard -->
+      <div class="text-center">
+        <a onclick="call_page('registered_user')" class="text-black underline text-base">
+          ← Retour Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+  <script src="../scripts/profil.js"></script>
+</html>

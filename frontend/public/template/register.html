@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="<div class="h-screen w-screen flex bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('assets/background_flipped.png');">
+      <style>
+        .triangle {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 0;
+          border-bottom: 200px solid rgb(255, 255, 255);
+          border-left: 200px solid transparent;
+          z-index: 30;
+        }
+        .triangle-top {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0;
+          height: 0;
+          border-top: 200px solid rgb(255, 255, 255);
+          border-left: 200px solid transparent;
+          z-index: 30;
+        }
+        .triangle-mirror {
+          position: absolute;
+          top: 0;
+          right: calc(50% - 200px);
+          width: 0;
+          height: 0;
+          border-left: 200px solid rgb(255, 255, 255);
+          border-bottom: 200px solid transparent;
+          z-index: 30;
+        }
+        .triangle-bottom {
+          position: absolute;
+          bottom: 0;
+          right: calc(50% - 200px);
+          width: 0;
+          height: 0;
+          border-left: 200px solid rgb(255, 255, 255);
+          border-top: 200px solid transparent;
+          z-index: 30;
+        }
+      </style>
+
+      <!-- Triangle decorations (mirrored to the right) -->
+      <div class="triangle"></div>
+      <div class="triangle-top"></div>
+      <div class="triangle-mirror"></div>
+      <div class="triangle-bottom"></div>
+
+      <!-- Left half - register form -->
+      <div class="bg-white relative z-10 h-screen overflow-y-auto" style="width: calc(50% + 50px);">
+        <form
+          id="register-form"
+          class="w-full min-h-full flex flex-col justify-center px-16 gap-4"
+          style="font-family: 'Courier New', monospace;"
+        >
+          <!-- Error message display -->
+          <div id="register-error" style="display:none; color:red; font-size:1rem; text-align:center; margin-bottom:1rem;"></div>
+          <h2 class="text-3xl font-bold text-center text-black mb-8">
+            Register
+          </h2>
+          <label class="text-black text-base mb-2">Username</label>
+          <input
+            type="text"
+            name="username"
+            placeholder=""
+            required
+            class="w-full p-3 mb-4 border border-black text-black bg-white text-base"
+            style="font-family: 'Courier New', monospace;"
+          />
+          <label class="text-black text-base mb-2">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder=""
+            required
+            class="w-full p-3 mb-4 border border-black text-black bg-white text-base"
+            style="font-family: 'Courier New', monospace;"
+          />
+          <label class="text-black text-base mb-2">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder=""
+            required
+            class="w-full p-3 mb-4 border border-black text-black bg-white text-base"
+            style="font-family: 'Courier New', monospace;"
+          />
+          <label class="text-black text-base mb-2">Confirm Password</label>
+          <input
+            type="password"
+            name="confirm_password"
+            placeholder=""
+            required
+            class="w-full p-3 mb-4 border border-black text-black bg-white text-base"
+            style="font-family: 'Courier New', monospace;"
+          />
+          <button
+            type="submit"
+            class="w-full py-4 bg-[#30b6df] text-white text-sm border-none cursor-pointer"
+            style="font-family: 'Courier New', monospace;"
+          >
+            CONFIRM
+          </button>
+          <div class="text-black text-base mt-4">
+            <a onclick="call_page('login')" class="text-black underline">
+              Already have an account? Login
+            </a>
+          </div>
+          <div class="text-center mt-4">
+            <a onclick="call_page('index')" class="text-black underline text-sm">
+              Back to Home
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right half - background image with white borders -->
+      <div class="relative z-10 border-r-[50px] border-t-[50px] border-b-[50px] border-white h-screen" style="width: calc(50% - 50px);"></div>
+    </div>
+  </body>
+</html>

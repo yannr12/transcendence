@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOLAR_TRANSCENDENCE</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'pulse-green': 'pulse-green 2s ease-in-out infinite',
+            },
+            keyframes: {
+              'pulse-green': {
+                '0%, 100%': { opacity: '0.4' },
+                '50%': { opacity: '1' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @font-face {
+        font-family: 'Victor Mono';
+        src: url('../assets/fonts/WOFF2/VictorMono-Regular.woff2') format('woff2'),
+          url('../assets/fonts/WOFF/VictorMono-Regular.woff') format('woff'),
+          url('../assets/fonts/TTF/VictorMono-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Victor Mono';
+        src: url('../assets/fonts/WOFF2/VictorMono-Bold.woff2') format('woff2'),
+          url('../assets/fonts/WOFF/VictorMono-Bold.woff') format('woff'),
+          url('../assets/fonts/TTF/VictorMono-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body class="font-mono ">
+    <div class="h-screen w-screen flex bg-cover bg-center bg-no-repeat bg-fixed relative" style="background-image: url('../assets/background_flipped.png');">
+      <div class="absolute top-8 left-0 right-0 px-4 z-20 flex flex-col sm:flex-row sm:justify-between items-center sm:items-start gap-4">
+        <!-- Profile Card -->
+        <div class="bg-white px-6 py-4 sm:p-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-8 font-mono w-full sm:max-w-[600px]">
+          <!-- Avatar -->
+          <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 flex items-center justify-center overflow-hidden relative">
+            <!-- corner decorations -->
+            <div class="absolute top-0 left-0 w-0 h-0 z-10 border-t-[12px] border-t-white border-r-[12px] border-r-transparent"></div>
+            <div class="absolute top-0 right-0 w-0 h-0 z-10 border-t-[12px] border-t-white border-l-[12px] border-l-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-0 h-0 z-10 border-b-[12px] border-b-white border-r-[12px] border-r-transparent"></div>
+            <div class="absolute bottom-0 right-0 w-0 h-0 z-10 border-b-[12px] border-b-white border-l-[12px] border-l-transparent"></div>
+            <img id="avatarPreview" src="https://via.placeholder.com/150"class="w-32 h-32 rounded-full object-cover mb-2 border-2 border-[#1d3349]">
+            <span id="user-initial" class="text-2xl sm:text-3xl font-bold text-black relative z-20">U</span>
+          </div>
+          <!-- Username Info -->
+          <div class="text-center sm:text-left break-words">
+            <div id="username-display" class="text-black font-bold text-xl sm:text-2xl">Username</div>
+            <div class="flex items-center justify-center sm:justify-start gap-2 text-gray-600 text-base sm:text-lg">
+				<div class="flex gap-1">
+					<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse-green"></div>
+					<!-- <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse-green" style="animation-delay: 0.3s;"></div>
+					<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse-green" style="animation-delay: 0.6s;"></div> -->
+				</div>
+				<span>Online</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right buttons -->
+        <div class="flex gap-4 self-end sm:self-auto">
+          <button onclick="call_page('stats')" class="p-2 hover:opacity-70 transition-opacity duration-200 cursor-pointer bg-transparent border-none">
+            <svg width="48" height="43" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.75 5.10123V5.14686C13.75 5.68436 13.75 5.95373 13.6206 6.17373C13.4912 6.39373 13.2556 6.52436 12.7856 6.78623L12.29 7.06123C12.6312 5.90623 12.7456 4.66498 12.7875 3.60373L12.7937 3.46561L12.795 3.43311C13.2019 3.57436 13.4306 3.67998 13.5731 3.87748C13.75 4.12311 13.75 4.44936 13.75 5.10123ZM1.25 5.10123V5.14686C1.25 5.68436 1.25 5.95373 1.37938 6.17373C1.50875 6.39373 1.74437 6.52436 2.21438 6.78623L2.71062 7.06123C2.36875 5.90623 2.25437 4.66498 2.2125 3.60373L2.20625 3.46561L2.20563 3.43311C1.79813 3.57436 1.56938 3.67998 1.42687 3.87748C1.25 4.12311 1.25 4.44998 1.25 5.10123Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2356 1.46689C9.33134 1.31877 8.4163 1.24622 7.49999 1.25002C6.38561 1.25002 5.46686 1.34814 4.76436 1.46689C4.05249 1.58689 3.69686 1.64689 3.39936 2.01314C3.10249 2.37939 3.11811 2.77502 3.14936 3.56627C3.25749 6.28377 3.84374 9.67877 7.03124 9.97877V12.1875H6.13749C5.99306 12.1876 5.85311 12.2377 5.74145 12.3293C5.62979 12.4209 5.5533 12.5484 5.52499 12.69L5.40624 13.2813H3.74999C3.62567 13.2813 3.50644 13.3307 3.41853 13.4186C3.33062 13.5065 3.28124 13.6257 3.28124 13.75C3.28124 13.8743 3.33062 13.9936 3.41853 14.0815C3.50644 14.1694 3.62567 14.2188 3.74999 14.2188H11.25C11.3743 14.2188 11.4935 14.1694 11.5814 14.0815C11.6694 13.9936 11.7187 13.8743 11.7187 13.75C11.7187 13.6257 11.6694 13.5065 11.5814 13.4186C11.4935 13.3307 11.3743 13.2813 11.25 13.2813H9.59374L9.47499 12.69C9.44668 12.5484 9.37019 12.4209 9.25853 12.3293C9.14687 12.2377 9.00692 12.1876 8.86249 12.1875H7.96874V9.97877C11.1562 9.67877 11.7431 6.28439 11.8506 3.56627C11.8819 2.77502 11.8981 2.37877 11.6006 2.01314C11.3031 1.64689 10.9475 1.58689 10.2356 1.46689Z" fill="white"/>
+              </svg>
+          </button>
+		  <button onclick="call_page('friends')" class="p-2 hover:opacity-70 transition-opacity duration-200 cursor-pointer bg-transparent border-none">
+			<svg width="55" height="40" viewBox="0 0 55 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M16.5 20C21.8195 20 26.125 15.6945 26.125 10.375C26.125 5.05547 21.8195 0.75 16.5 0.75C11.1805 0.75 6.875 5.05547 6.875 10.375C6.875 15.6945 11.1805 20 16.5 20ZM23.1 22.75H22.3867C20.5992 23.6094 18.6141 24.125 16.5 24.125C14.3859 24.125 12.4094 23.6094 10.6133 22.75H9.9C4.43437 22.75 0 27.1844 0 32.65V35.125C0 37.4023 1.84766 39.25 4.125 39.25H28.875C31.1523 39.25 33 37.4023 33 35.125V32.65C33 27.1844 28.5656 22.75 23.1 22.75ZM41.25 20C45.8047 20 49.5 16.3047 49.5 11.75C49.5 7.19531 45.8047 3.5 41.25 3.5C36.6953 3.5 33 7.19531 33 11.75C33 16.3047 36.6953 20 41.25 20ZM45.375 22.75H45.0484C43.8539 23.1625 42.5906 23.4375 41.25 23.4375C39.9094 23.4375 38.6461 23.1625 37.4516 22.75H37.125C35.3719 22.75 33.7562 23.257 32.3383 24.0734C34.4352 26.3336 35.75 29.3328 35.75 32.65V35.95C35.75 36.1391 35.707 36.3195 35.6984 36.5H50.875C53.1523 36.5 55 34.6523 55 32.375C55 27.0555 50.6945 22.75 45.375 22.75Z" fill="white"/>
+				</svg>
+		  </button>
+          
+          <button onclick="call_page('profile')" class="p-2 hover:opacity-70 transition-opacity duration-200 cursor-pointer bg-transparent border-none">
+            <svg width="48" height="45" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M23.9999 33.4584C21.7566 33.4584 19.6052 32.5672 18.0189 30.981C16.4327 29.3947 15.5415 27.2433 15.5415 25C15.5415 22.7568 16.4327 20.6053 18.0189 19.0191C19.6052 17.4329 21.7566 16.5417 23.9999 16.5417C26.2431 16.5417 28.3946 17.4329 29.9808 19.0191C31.567 20.6053 32.4582 22.7568 32.4582 25C32.4582 27.2433 31.567 29.3947 29.9808 30.981C28.3946 32.5672 26.2431 33.4584 23.9999 33.4584ZM41.9557 27.3442C42.0524 26.5709 42.1249 25.7975 42.1249 25C42.1249 24.2025 42.0524 23.405 41.9557 22.5834L47.0549 18.6442C47.514 18.2817 47.6349 17.6292 47.3449 17.0975L42.5115 8.73588C42.2215 8.20421 41.569 7.98671 41.0374 8.20421L35.0199 10.6209C33.7632 9.67838 32.4582 8.85671 30.9357 8.25255L30.0415 1.84838C29.9924 1.56374 29.8442 1.30566 29.623 1.11988C29.4018 0.934095 29.122 0.832601 28.8332 0.833378H19.1665C18.5624 0.833378 18.0549 1.26838 17.9582 1.84838L17.064 8.25255C15.5415 8.85671 14.2365 9.67838 12.9799 10.6209L6.96236 8.20421C6.43069 7.98671 5.77819 8.20421 5.48819 8.73588L0.654856 17.0975C0.340689 17.6292 0.48569 18.2817 0.944856 18.6442L6.04402 22.5834C5.94736 23.405 5.87486 24.2025 5.87486 25C5.87486 25.7975 5.94736 26.5709 6.04402 27.3442L0.944856 31.3559C0.48569 31.7184 0.340689 32.3709 0.654856 32.9025L5.48819 41.2642C5.77819 41.7959 6.43069 41.9892 6.96236 41.7959L12.9799 39.355C14.2365 40.3217 15.5415 41.1434 17.064 41.7475L17.9582 48.1517C18.0549 48.7317 18.5624 49.1667 19.1665 49.1667H28.8332C29.4374 49.1667 29.9449 48.7317 30.0415 48.1517L30.9357 41.7475C32.4582 41.1192 33.7632 40.3217 35.0199 39.355L41.0374 41.7959C41.569 41.9892 42.2215 41.7959 42.5115 41.2642L47.3449 32.9025C47.6349 32.3709 47.514 31.7184 47.0549 31.3559L41.9557 27.3442Z" fill="white"/>
+				</svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 px-4 pb-4 sm:pb-8 z-10">
+  <div class="flex flex-col-reverse sm:flex-row justify-between items-start sm:items-end gap-4 max-h-full overflow-y-auto">
+
+    <!-- Buttons -->
+
+    
+    <div class="flex flex-col gap-4 w-full sm:w-1/2 max-w-md">
+      <button id="1vbot" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 cursor-pointer transition-all duration-300 ease-in-out hover:bg-sky-100 hover:translate-x-1 " style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">PLAY AGAINST BOT</button>
+      <button id="survival" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 cursor-pointer transition-all duration-300 ease-in-out hover:bg-sky-100 hover:translate-x-1" style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">SURVIVAL MODE</button>
+      <button onclick="call_page('friends')" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 cursor-pointer transition-all duration-300 ease-in-out hover:bg-sky-100 hover:translate-x-1" style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">TOURNAMENT</button>
+      <a id="logout-btn" class="font-victor text-white bg-[#3CAFDA] px-3 py-1 m-2 text-sm border-0 shadow-[0px_2px_rgb(255,255,255),0px_-2px_rgb(255,255,255),2px_0px_rgb(255,255,255),-2px_0px_rgb(255,255,255),0px_4px_rgba(0,0,0,0.22),2px_2px_rgba(0,0,0,0.22),-2px_2px_rgba(0,0,0,0.22),inset_0px_2px_rgba(255,255,255,0.21)] cursor-pointer no-underline inline-block transition-transform duration-100 active:translate-y-0.5 w-fit">
+              logout
+            </a>
+    </div>
+
+    <!-- <div class="text-center mb-8">
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-8"></div>
+            <a id="logout-btn" class="font-victor text-white bg-[#3CAFDA] px-10 py-4 m-2 text-lg border-0 shadow-[0px_2px_rgb(255,255,255),0px_-2px_rgb(255,255,255),2px_0px_rgb(255,255,255),-2px_0px_rgb(255,255,255),0px_4px_rgba(0,0,0,0.22),2px_2px_rgba(0,0,0,0.22),-2px_2px_rgba(0,0,0,0.22),inset_0px_2px_rgba(255,255,255,0.21)] cursor-pointer no-underline inline-block transition-transform duration-100 active:translate-y-0.5">
+              Continue as Guest
+            </a>
+          </div> -->
+
+    <!-- Classement général -->
+    <div class="bg-white bg-opacity-90 shadow-lg p-6 w-full sm:w-80 max-h-[50vh] overflow-y-auto font-mono">
+      <h2 class="text-xl font-normal text-black mb-4" style="font-family: 'Victor Mono', monospace;"> >Classement général</h2>
+      <div class="space-y-2">
+        <!-- List of players -->
+        <div class="bg-gray-300 rounded-full px-4 py-1 text-gray-700 text-sm flex items-center" style="font-family: 'Victor Mono', monospace; font-weight: 300;">
+            <span>Joueur 1</span>
+          </div>
+          <div class="bg-gray-300 rounded-full px-4 py-1 text-gray-700 text-sm flex items-center" style="font-family: 'Victor Mono', monospace; font-weight: 300;">
+            <span>Joueur 2</span>
+          </div>
+      </div>
+      <a href="#" class="mt-4 inline-block text-blue-600 hover:underline text-sm">Afficher plus</a>
+    </div>
+
+
+  </div>
+</div>
+
+
+    </div>
+  </body>
+</html>
+
+<!-- <div id="survival-records-container" class="mt-12 w-full max-w-2xl bg-[#4b6175] rounded-lg shadow-xl p-6">
+      <h2 class="text-3xl font-bold text-center mb-6">Records mode 'survival'</h2>
+      <table id="survival-records-table" class="min-w-full divide-y divide-gray-600">
+        <thead>
+          <tr>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Joueur</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Score</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Date</th>
+          </tr>
+        </thead>
+        <tbody class="bg-[#38424d] divide-y divide-gray-700">
+          </tbody>
+      </table>
+      <p id="no-survival-records" class="text-center text-gray-300 mt-4 hidden">Aucun record du mode 'survival' trouvé pour le moment.</p>
+      </div> -->
+
+      <!-- <div class="flex flex-col gap-4 w-full sm:w-1/2">
+          <button id="1vbot" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 hover:bg-sky-100 transition-all" style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">PLAY AGAINST BOT</button>
+          <button id="survival" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 hover:bg-sky-100 transition-all" style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">SURVIVAL MODE</button>
+          <button onclick="call_page('friends')" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 hover:bg-sky-100 transition-all" style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">TOURNAMENT</button>
+          <button id="logout-btn" class="p-2 hover:opacity-70">
+          </button>
+        </div> -->

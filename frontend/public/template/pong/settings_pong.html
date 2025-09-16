@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pong's settings</title>
+</head>
+<body>
+    <div class="w-screen h-screen flex justify-center items-center bg-gray-100 flex-col text-black">
+        <div id="back" class="absolute w-[50px] h-[50px] bg-red-600 left-5 top-5"></div>
+        <div id="settings" class="w-2/3 h-2/3 grid grid-cols-3 grid-rows-3 gap-10 items-center justify-center">
+            <div></div>
+            <div id="top-player" class="flex flex-col items-center justify-center invisible">
+                <label class="flex items-center gap-2">
+                    <input id="player3" onclick="botOrNot(this)" type="checkbox" class="accent-pink-500"/>Bot
+                    <input id="input-3" type="text" class="border rounded px-2 py-1 placeholder:text-slate-400" placeholder="Player 3" required/>
+                </label>
+            </div>
+            <div></div>
+            <div id="left-player" class="flex flex-col items-center justify-center">
+                <label class="flex items-center gap-2">
+                    <input id="player1" onclick="botOrNot(this)" type="checkbox" class="accent-pink-500"/>Bot
+                    <input id="input-1" type="text" class="border rounded px-2 py-1 placeholder:text-slate-400" placeholder="Player 1" required/>
+                </label>
+            </div>
+            <div id="board" class="bg-pink-400 rounded-lg w-full h-full flex items-center justify-center shadow-lg">
+                <span class="text-white text-xl font-bold">PONG</span>
+            </div>
+            <div id="right-player" class="flex flex-col items-center justify-center">
+                <label class="flex items-center gap-2">
+                    <input id="player2" onclick="botOrNot(this)" type="checkbox" class="accent-pink-500"/>Bot
+                    <input id="input-2" type="text" class="border rounded px-2 py-1 placeholder:text-slate-400" placeholder="Player 2" required/>
+                </label>
+            </div>
+            <div></div>
+            <div id="bottom-player" class="flex flex-col items-center justify-center invisible">
+                <label class="flex items-center gap-2">
+                    <input id="player4" onclick="botOrNot(this)" type="checkbox" class="accent-pink-500"/>Bot
+                    <input id="input-4" type="text" class="border rounded px-2 py-1 placeholder:text-slate-400" placeholder="Player 4" required/>
+                </label>
+            </div>
+            <div></div>
+        </div>
+	    <div class="w-[90%] h-[150px] flex justify-evenly items-center">
+	    	<button onclick="mode2players()" id="mode2" class="bg-blue-700 rounded-lg text-slate-100 hover:bg-blue-800 hover:text-slate-200 shadow font-semibold w-[400px] h-[100px]">2 players</button>
+	    	<button onclick="mode4players()" id="mode4" class="bg-blue-700 rounded-lg text-slate-100 hover:bg-blue-800 hover:text-slate-200 shadow font-semibold w-[400px] h-[100px]">4 players</button>
+            <button id="confirm" class="bg-green-500 rounded-lg text-slate-100 hover:bg-green-600 hover:text-slate-200 font-semibold w-[400px] h-[100px]">Confirm</button>
+	    </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../scripts/pong/utils.js"></script>
+<script type="text/javascript" src="../../scripts/pong/settings.js"></script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tournoi - Solar Transcendence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen flex flex-col items-center justify-center bg-[#38424d] text-white">
+    
+    <h1 class="text-4xl font-bold mb-6">Tournoi - Solar Transcendence</h1>
+    
+    <div class="bg-[#e8eef0] text-[#112550] p-6 rounded-xl shadow w-full max-w-sm text-center">
+      <label for="playersCount" class="block mb-2 text-lg font-semibold">Nombre de joueurs réels supplémentaires :</label>
+      <input id="playersCount" type="number" min="0" max="15" value="0" class="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring focus:border-blue-500 mb-4">
+      <div id="player-names-container" class="mt-4 space-y-2"></div>
+      
+      <button id="startTournamentBtn" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+        Lancer le tournoi
+      </button>
+      
+      <div id="tournament-status" class="mt-4"></div>
+      
+      <button id="startMatchBtn" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition hidden">
+          Prochain Match
+      </button>
+      
+      <div id="tournament-bracket" class="mt-6"></div>
+    </div>
+    
+    <a href="/registered_user" class="mt-8 text-blue-400 hover:underline">Retour Dashboard</a>
+  </body>
+  <script type="text/javascript" src="scripts/tournoi.js" defer></script>
+</html>

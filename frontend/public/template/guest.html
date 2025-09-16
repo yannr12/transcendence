@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guest Dashboard</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/scripts/guest.js"></script>
+  </head>
+  <body class="min-h-screen flex items-center justify-center bg-[#f5f7fa] text-[#222]" style="background-image: url('../assets/background_flipped.png');">
+    <div class="w-full max-w-md mx-auto p-8 flex flex-col items-center font-mono">
+
+      
+      <div class="flex flex-col gap-4 w-full mt-6">
+        <button onclick="call_page('modes')" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 hover:bg-sky-100 transition-all w-full" style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">
+          PLAY PONG
+        </button>
+        <button onclick="call_page('tournoi')" class="relative bg-white text-black text-left font-bold py-5 pl-6 pr-12 hover:bg-sky-100 transition-all w-full" style="clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 0 100%)">
+          LOCAL TOURNAMENT
+        </button>
+      </div>
+      
+      <a onclick="call_page('index')" class="w-full">
+        <button class="mt-6 w-full px-6 py-2 bg-[#30b6df] text-white rounded-none hover:bg-[#e0e4ea] transition">
+          Back 
+        </button>
+      </a>
+      
+      <div class="relative mt-4 p-3 rounded-none text-[#666] text-sm text-center" style="background-color:rgba(240,244,248,0.85);">
+        <p>You're browsing as a guest. Some features may be limited.</p>
+        <div class="mt-2 flex gap-2 justify-center">
+          <a onclick="call_page('login')" class="text-[#3CAFDA] hover:underline cursor-pointer">Login</a>
+          <span>or</span>
+          <a onclick="call_page('register')" class="text-[#3CAFDA] hover:underline cursor-pointer">Register</a>
+        </div>
+      </div>
+</div>
+
+  </body>
+</html>

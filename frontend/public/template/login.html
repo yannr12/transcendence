@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @font-face {
+        font-family: 'Victor Mono';
+        src: url('../assets/fonts/WOFF2/VictorMono-Regular.woff2') format('woff2'),
+             url('../assets/fonts/WOFF/VictorMono-Regular.woff') format('woff'),
+             url('../assets/fonts/TTF/VictorMono-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+      
+      @font-face {
+        font-family: 'Victor Mono';
+        src: url('../assets/fonts/WOFF2/VictorMono-Bold.woff2') format('woff2'),
+             url('../assets/fonts/WOFF/VictorMono-Bold.woff') format('woff'),
+             url('../assets/fonts/TTF/VictorMono-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="h-screen flex bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('../assets/background_flipped.png');">
+    <script src="../scripts/login.js"></script>
+
+        <div class="absolute bottom-0 left-0 w-0 h-0 z-30 border-b-[200px] border-b-white border-r-[200px] border-r-transparent"></div>
+        <div class="absolute top-0 left-0 w-0 h-0 z-30 border-t-[200px] border-t-white border-r-[200px] border-r-transparent"></div>
+        <div class="absolute top-0 w-0 h-0 z-30 border-r-[200px] border-r-white border-b-[200px] border-b-transparent" style="left: calc(50% - 200px);"></div>
+        <div class="absolute bottom-0 w-0 h-0 z-30 border-r-[200px] border-r-white border-t-[200px] border-t-transparent" style="left: calc(50% - 200px);"></div>
+        
+        <div class="relative z-10 border-l-[50px] border-t-[50px] border-b-[50px] border-white h-screen w-[calc(50%-50px)]"></div>
+        
+        <div class="bg-white relative z-10 h-screen overflow-y-auto w-[calc(50%+50px)]">
+          <form
+            id="login-form"
+            class="w-full min-h-full flex flex-col justify-center px-16 gap-4"
+            style="font-family: 'Victor Mono', monospace;"
+          >
+            <h2 class="text-3xl font-bold text-center text-black mb-8">
+              LOGIN
+            </h2>
+            
+            <label class="text-black text-base mb-2">Adresse e-mail</label>
+            <input
+              type="email"
+              name="username"
+              placeholder=""
+              required
+              class="w-full p-3 mb-4 border border-black text-black bg-white text-base"
+              style="font-family: 'Victor Mono', monospace;"
+            />
+            
+            <label class="text-black text-base mb-2">Mot de passe</label>
+            <input
+              type="password"
+              name="password"
+              placeholder=""
+              required
+              class="w-full p-3 mb-4 border border-black text-black bg-white text-base"
+              style="font-family: 'Victor Mono', monospace;"
+            />
+            
+            <a href="#" class="text-black underline text-base mb-10 inline-block">
+              J'ai oublié mon mot de passe
+            </a>
+            
+            <div class="text-black text-base mb-2">
+            <a onclick="call_page('register')" class="text-black underline">
+                Je m'inscris à l'expédition 
+              </a>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-4 bg-[#30b6df] text-white text-sm border-none cursor-pointer"
+              style="font-family: 'Victor Mono', monospace;"
+            >
+              EMBARQUER MAINTENANT
+            </button>
+            
+            <div class="border-t-2 border-dashed border-black my-10"></div>
+            
+            <div class="text-black text-sm mb-5">
+              <a onclick="call_page('guest')" class="text-black underline">
+                J'embarque sans m'inscrire
+              </a>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <div>
+                <div class="flex gap-[2px] p-4">
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[6px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[4px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[6px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[4px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[6px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[4px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[6px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                  <div class="w-[2px] h-14 bg-black"></div>
+                </div>
+                <div class="text-black text-l mb- tracking-[10px]" style="font-family: 'Victor Mono', monospace;">
+                  3 1 4 1 5 9 2 6 5 3 5 8 9 7 9 3 2 3 8 4
+                </div>
+              </div>
+              <div class="text-xl">🌍 ➔ 🪐</div>
+            </div>
+            
+            <div class="text-center mt-4">
+              <a onclick="call_page('index')" class="text-black underline text-sm">
+                Retour à l'accueil
+              </a>
+            </div>
+          </form>
+        </div>
+    </div>
+  </body>
+</html>

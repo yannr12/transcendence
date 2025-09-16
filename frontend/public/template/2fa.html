@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two-Factor Authentication</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../scripts/2fa.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap">
+    <style>
+      body, html { height: 100%; margin: 0; }
+      .font-mono { font-family: 'Roboto Mono', monospace; }
+    </style>
+  </head>
+  <body class="h-screen w-screen flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed font-mono relative" style="background-image: url('/assets/background.png');">
+    <!-- Error box placeholder -->
+    <div id="errorBox" style="display:none;"></div>
+    <!-- Loading spinner placeholder -->
+    <div id="loadingSpinner" style="display:none;"></div>
+
+    <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl shadow-lg p-8 w-full max-w-md flex flex-col items-center justify-center z-10">
+      <h2 class="text-3xl font-bold text-center text-black mb-8">
+        Two-Factor Authentication
+      </h2>
+      <div class="space-y-6 w-full">
+        <div class="flex items-center justify-between w-full">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-700">Email 2FA</h3>
+            <p class="text-sm text-gray-500">Secure your account with email verification</p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="email2faToggle" class="sr-only peer" onchange="toggleEmail2FA()">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#112550]"></div>
+          </label>
+        </div>
+        <div id="emailSection" class="hidden space-y-4">
+          <div>
+            <label for="emailInput" class="block text-sm font-medium text-gray-700 mb-2">
+              Confirm your email address
+            </label>
+            <input 
+              type="email" 
+              id="emailInput" 
+              placeholder="Enter your registered email"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#112550] focus:border-transparent text-black bg-white placeholder-gray-500"
+            >
+          </div>
+          <button 
+            onclick="confirmEmail()" 
+            class="w-full bg-[#30b6df] text-white py-2 px-4 rounded-md hover:bg-[#3cc0e8] transition duration-200 font-bold shadow"
+          >
+            Confirm Email
+          </button>
+          <div id="statusMessage" class="hidden p-3 rounded-md text-sm"></div>
+        </div>
+      </div>
+      <div class="border-t-2 border-dashed border-black my-10 w-full"></div>
+      <div class="text-center mt-2 w-full">
+        <a onclick="call_page('profile')" class="text-black underline text-sm mb-4 font-semibold">
+          Back to Profile
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
