@@ -1,0 +1,31 @@
+{
+  "name": "service_authentification",
+  "version": "1.0.0",
+  "description": "enregistrement des informations",
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^8.3.0",
+    "fastify": "^5.3.3",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^7.0.4",
+    "speakeasy": "^2.0.0",
+    "undici": "^6.11.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^20.0.0",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "test": "npm start",
+    "start": "node src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+  },
+  "author": "Rithy",
+  "license": "ISC"
+}
