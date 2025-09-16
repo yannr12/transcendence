@@ -85,6 +85,6 @@ Ce projet a été conçu avec une architecture en **microservices**, ce qui perm
 
 <img width="512" height="325" alt="fond_transcendence" src="https://github.com/user-attachments/assets/37e4441b-a0f9-4259-b012-cbe84e36cbac" />
 
-<img width="341" height="341" alt="pers0_transcendence" src="https://github.com/user-attachments/assets/42a96e6f-67b2-49c1-ac58-52cf5b75593e" />
+<img width="325" height="325" alt="pers0_transcendence" src="https://github.com/user-attachments/assets/42a96e6f-67b2-49c1-ac58-52cf5b75593e" />
 
 N'hésitez pas à explorer le code et à nous contacter si vous avez des questions \! 😉
